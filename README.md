@@ -2,6 +2,8 @@
 # Painted
 
 Painted is a two-player game that a player can win by painting more than a half of tiles on the game board. The game board starts with all sky-blue color. When a player moves on a tile, the tile changes its color (player1: red, player2: blue). Last one who visited the tile gets its color. When two player moves to a tile exactly at the same time, the tile goes back to its original color (sky-blue)
+Player 1's controls are "W", "A", "S", "D"
+Player 2's controls are "I", "J", "K", "L"
 
 ## Getting Started
 ---
