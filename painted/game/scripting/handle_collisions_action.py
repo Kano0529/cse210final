@@ -1,8 +1,9 @@
 import constants
 from game.casting.actor1 import Actor1
-from game.casting.actor2 import Actor2
 from game.scripting.action import Action
 from game.shared.point import Point
+
+
 
 class HandleCollisionsAction(Action):
     """
@@ -91,17 +92,36 @@ class HandleCollisionsAction(Action):
         Args:
             cast (Cast): The cast of Actors in the game.
         """
+        player1 = cast.get_first_actor("player1s")
+        player2 = cast.get_first_actor("player2s")
+        tiles = cast.get_actors("tiles")
+        
         if self._is_game_over:
             x = int(constants.MAX_X / 2)
             y = int(constants.MAX_Y / 2)
             position = Point(x, y)
-
+            x_2 = int(constants.MAX_X / 2)
+            y_2 = int(y + 80)
+            position_2 = Point(x_2, y_2)
+            
             # game over message handling
             message = Actor1()
             if self._player1_score == 286:        
                 message.set_text("Player1 wins!")
+                for tile in tiles: 
+                    tile.set_color(player1.get_color())
             if self._player2_score == 286:
-                message.set_text("Player2 wins!")    
+                message.set_text("Player2 wins!")
+                for tile in tiles:
+                    tile.set_color(player2.get_color())    
             message.set_position(position)
             message.set_color(constants.WHITE)
+            message._font_size = 55
             cast.add_actor("messages", message)
+            
+            message_2 = Actor1()
+            message_2.set_text("Thank you for playing!")
+            message_2.set_position(position_2)
+            message_2.set_color(constants.WHITE)
+            message_2._font_size = 30
+            cast.add_actor("messages", message_2)           

@@ -7,11 +7,10 @@ class Tiles(Actor3):
 
     def __init__(self,x,y):
         super().__init__()
-
         # initial setting of tiles   
         self.set_color(constants.BACKGROUND_COLOR)
         self.set_position(Point(x,y))
-        self.set_text("@")
+        self.set_text("O")
 
     def move_next(self):
         pass

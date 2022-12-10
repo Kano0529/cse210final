@@ -19,7 +19,7 @@ class Player2(Actor2):
         self._segments = []
         self.x = int(constants.MAX_X - constants.CELL_SIZE*2)
         self.y = int(constants.MAX_Y / 2)
-        self.set_text("8")
+        self.set_text("#")
         self.set_color(constants.BLUE)
         self._position = Point(self.x, self.y)
 

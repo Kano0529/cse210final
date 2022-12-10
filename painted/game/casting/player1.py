@@ -20,7 +20,7 @@ class Player1(Actor1):
         self.x = int(constants.CELL_SIZE*2)
         self.y = int(constants.MAX_Y / 2)
         self._position = Point(self.x, self.y)
-        self.set_text("8")
+        self.set_text("#")
         self.set_color(constants.RED)
 
     def set_position(self, position):
